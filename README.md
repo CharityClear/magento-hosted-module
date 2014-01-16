@@ -1,0 +1,2 @@
+magento-hosted-module
+=====================
