@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<CharityClear_CharityClearHosted>
+			<active>true</active>
+			<codePool>community</codePool>
+		</CharityClear_CharityClearHosted>
+	</modules>
+</config>
