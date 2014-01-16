@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Charityclear
+ * @package    Hosted
+ * @copyright  Copyright (c) 2009 - 2012 Charityclear Limited (http://www.charityclear.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <CharityClear_CharityClearHosted>
+            <version>2.0.0</version>          
+        </CharityClear_CharityClearHosted>
+    </modules>
+    <global>
+        <models>
+            <CharityClearHosted>
+                <class>CharityClear_CharityClearHosted_Model</class>
+                <resourceModel>CharityClearHosted_mysql4</resourceModel>
+            </CharityClearHosted>
+            <CharityClearHosted_mysql4>
+                <class>CharityClear_CharityClearHosted_Model_Mysql4</class>
+                <entities>
+                    <CharityClearHosted_Trans><table>CharityClearHosted_Trans</table></CharityClearHosted_Trans>
+                </entities>
+            </CharityClearHosted_mysql4>
+        </models>
+        <resources>
+            <CharityClearHosted_setup>
+                <setup>
+                    <module>CharityClear_CharityClearHosted</module>
+                    <class>CharityClear_CharityClearHosted_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </CharityClearHosted_setup>
+            <CharityClearHosted_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </CharityClearHosted_write>
+            <CharityClearHosted_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </CharityClearHosted_read>
+        </resources>
+        <blocks>
+            <CharityClearHosted><class>CharityClear_CharityClearHosted_Block</class></CharityClearHosted>
+        </blocks>
+        <helpers>
+            <CharityClearHosted>
+                <class>Charityclear_CharityClearHosted_Helper</class>
+            </CharityClearHosted>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <CharityClearHosted>
+                <use>standard</use>
+                <args>
+                    <module>CharityClear_CharityClearHosted</module>
+                    <frontName>CharityClearHosted</frontName>
+                </args>
+            </CharityClearHosted>
+        </routers>
+        <translate>
+            <modules>
+                <CharityClear_CharityClearHosted>
+                    <files>
+                        <default>CharityClear_CharityClearHosted.csv</default>
+                    </files>
+                </CharityClear_CharityClearHosted>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <CharityClearHosted>
+                    <file>CharityClearHosted.xml</file>
+                </CharityClearHosted>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <CharityClear_CharityClearHosted>
+                    <files>
+                        <default>Charityclear_CharityClearHosted.csv</default>
+                    </files>
+                </CharityClear_CharityClearHosted>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+         <payment>
+             <CharityClearHosted_standard>
+                  <model>CharityClearHosted/standard</model>
+                  <title>CharityClear Hosted Form</title>
+                  <allowspecific>1</allowspecific>
+            </CharityClearHosted_standard>
+        </payment>
+    </default>
+</config>
